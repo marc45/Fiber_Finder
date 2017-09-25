@@ -18,7 +18,7 @@ import cv2
 
 # load the image and perform pyramid mean shift filtering
 # to aid the thresholding step
-image = cv2.imread('cut_PMP_fibers.jpg');
+image = cv2.imread('fibers.jpg');
 image = image.copy()
 
 #Remove centers of fibers
@@ -90,7 +90,7 @@ for label in np.unique(labels):
     	 cv2.FONT_HERSHEY_SIMPLEX, 0.4, (0, 0, 255), 1)
         cv2.imwrite('found_fibers.jpg', image)
         newImg = image[y:y+h, x:x+h]
-        newFileName = 'CroppedFibers\Image{}.jpg'.format(label)
+        newFileName = 'ExtractedFibers\Fiber{}.jpg'.format(label)
         cv2.imwrite(newFileName, newImg)
         
 
